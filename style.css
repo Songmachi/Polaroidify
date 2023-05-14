@@ -1,51 +1,23 @@
-.main-wrapper{
-    
-}
-
-.main-menu-wrapper{
- 
-}
-
-.logo-menu-wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 48px;
-    height: 80px;
-    
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
-}
-
-
-.menu-wrapper{
-    display: flex;
-    gap: 16px;
-}
-.menu-wrapper div{
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-}
-
-.service-registraion-wrapper{
-
-}
-
-
 @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-ol, ul, li, a {
+ol,
+ul,
+li,
+a {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 .home-main {
-    background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1000px;
+    background: #c0392b;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #8e44ad, #c0392b);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #8e44ad, #c0392b);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .home-main-header {
@@ -63,13 +35,13 @@ ol, ul, li, a {
     color: #FFFFFF;
 }
 
-.home-main-header-title > a {
+.home-main-header-title>a {
     display: flex;
     align-items: center;
     font-size: 40px;
 }
 
-.home-main-header-title > a > img{
+.home-main-header-title>a>img {
     width: 75px;
     height: 75px;
 }
@@ -79,7 +51,7 @@ ol, ul, li, a {
     flex-wrap: nowrap;
 }
 
-.home-main-header-menu > a {
+.home-main-header-menu>a {
     flex-shrink: 0;
     font-size: 19px;
     margin: 0 15px;
@@ -94,25 +66,27 @@ ol, ul, li, a {
     flex-wrap: wrap;
 
 }
-.home-main-card > .home-main-card-title{
-    color: #F1FDFF;
+
+.home-main-card>.home-main-card-title {
+    color: black;
     font-family: Roboto;
     font-size: 35px;
     font-weight: bold;
 }
-.home-main-card > .card {
+
+.home-main-card>.card {
     margin: 20px 20px;
     flex-shrink: 0;
 }
 
-.home-main-card > .card img {
+.home-main-card>.card img {
     border: solid 1px gainsboro;
     width: 250px;
     height: 270px;
 }
 
 
-.home-main-card > .card .card-content-title-like {
+.home-main-card>.card .card-content-title-like {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,7 +94,7 @@ ol, ul, li, a {
 
 }
 
-.home-main-card > .card .card-content-comment {
+.home-main-card>.card .card-content-comment {
     margin: 10px 0;
     height: 80px;
     max-width: 250px;
@@ -128,20 +102,23 @@ ol, ul, li, a {
     overflow: auto;
 }
 
-.card-content > .icon-text {
+.card-content>.icon-text {
     justify-content: end;
 }
 
 .card-content-comment {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .card-content-comment::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera*/
+    display: none;
+    /* Chrome, Safari, Opera*/
 }
 
-.home-main-card > .card .card-footer {
+.home-main-card>.card .card-footer {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
@@ -160,7 +137,7 @@ ol, ul, li, a {
     margin: 0 70px;
 }
 
-.home-explain-img > img {
+.home-explain-img>img {
     width: 400px;
     height: 400px;
     max-width: 100%;
@@ -196,7 +173,7 @@ ol, ul, li, a {
     color: #262A4E;
 }
 
-.home-team-names > div {
+.home-team-names>div {
     display: flex;
     align-items: center;
     justify-content: center;
