@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="style.css">
+  <!--JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Bulma-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Bulma Icon -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <!--Cookie-->
+  <title>test</title>
+
+</head>
+
+<body>
+
+  <body>
+    <div class="home-wrapper">
+      <div class="home-main">
+        <div class="home-main-header">
+          <div class="home-main-header-title">
+            <a><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Leica_Camera.svg/1200px-Leica_Camera.svg.png">
+              <span>Songstagram</span>
+            </a>
+          </div>
+          <div class="home-main-header-menu">
+            <a href="/addboard">자랑하기</a>
+            <a href="/myboardlist">내자랑</a>
+            <a href="/boardlist">둘러보기</a>
+
+            <a href="/mypage">내 정보</a>
+            <a onclick="logout()">로그아웃</a>
+
+            <a href="/login">로그인</a>
+
+          </div>
+        </div>
+        <div class="home-main-card">
+          <div class="home-main-card-title">
+            최고의 댕댕이에게 투표해보세요!
+          </div>
+
+          <div class="card" style="cursor: auto">
+            <div class="card-content">
+              <p class="title" style="display: flex; justify-content: center">
+                <img src="{{file}}">
+              </p>
+              <div class="card-content-title-like">
+                <h1 class="title" style="margin: 0">
+                  title
+                </h1>
+              </div>
+              <div class="card-content-comment">
+                comment
+              </div>
+              <div class="icon-text">
+                <span class="icon">
+                  <i class="fas fa-heart"></i>
+                </span>
+                <!--이거도 jinja-->
+                <span id='{{board_id}}'>good</span>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <div>nickname</div>
+              <div>date</div>
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <div class="home-explain">
+        <div class="home-explain-img">
+          <img src="../static/style/dog.jpg" alt="dog">
+        </div>
+        <div class="home-explain-text">
+          <p style="font-weight: 500; font-size: 35px; font-family: 'Roboto'; color: #2370C8;">
+            <b>ABOUT Dogstagram</b>
+          </p>
+          <p style="
+                        font-weight: bold; font-size: 48px; font-family: 'Roboto'; color: #262A4E; ">
+            우리들의 반려견을<br>자랑해보세요!</p>
+          <p style="font-size: 16px; font-family: 'Roboto'; color: #646464; ">
+            여러사람들과 사랑스러운 반려견의 사진을 공유해보세요<br>
+            어느 댕댕이가 가장 인기가 많을지 궁금하군요!<br>
+          </p>
+          <button style="margin-top: 10px;" class="button is-info" onclick="go_addboard()">자랑하러가기!
+          </button>
+        </div>
+      </div>
+      <!-- <div class="main-wrapper">
+        <div class="main-menu-wrapper">
+            <div class="logo-menu-wrapper">
+                <div class="logo-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Leica_Camera.svg/1200px-Leica_Camera.svg.png" alt="logo" width="80px" height="80px">
+                </div>
+                <div class="menu-wrapper">
+                    <div>회원가입</div>
+                    <div>로그인</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="service-registraion-wrapper">
+            <div id="main_visual"></div>
+        </div>
+        <div class="hot_and_new-service-wrapper"></div>
+        <div class="best-providers-wrapper"></div>
+        <div class="whoNwho-feed-wrapper"></div>
+        <div class="footer-wrapper"></div>
+    </div> -->
+  </body>
+
+</html>
