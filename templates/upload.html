@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<!--Custom CSS-->
+	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="addboard.css">
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!--Bulma-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+	<!-- Bulma Icon -->
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+
+
+	<title>사진 구경하기</title>
+	
+    <script>
+
+        // 이미지 미리보기 이벤트
+        function change_preview(a) {
+            let file = a.files[0]
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                $("#image").attr("src", e.target.result);
+                $("#image").css("width", "400");
+                $("#image").css("height", "450");
+            }
+            reader.readAsDataURL(file);
+        }
+
+        
+
+        
+    </script>
+</head>
+<body>
+<div class="home-main">
+    <div class="home-main-wrapper">
+    <div class="home-main-header">
+        <div class="home-main-header-title">
+            <a href="index.html"><img src='logo.png'>
+                <span>PoloridIFY</span>
+            </a>
+        </div>
+        <div class="home-main-header-menu">
+            <a href="about.html">Why Polaroid?</a>
+            <a href="galery.html"> 둘러보기</a>
+            <a href="upload.html">업로드</a>
+            <div class="mymenu">
+              <a>마이페이지</a>
+              <div class="submenu">
+  
+                <a href="mygallery.html">보관함</a>
+              </div>
+              <div class="submenu">
+                <a href="print.html">인화하기</a>
+              </div>
+              </div>  
+           
+            <a href="index.html">로그아웃</a>
+        </div>
+    </div>
+    </div>
+</div>
+    <div class="addboard-content-wrapper">
+        <div class="addboard-content">
+            <div class="addboard-content-img">
+                <img src="images/default.png" id="image">
+                <div class="file is-primary" style="justify-content: center; margin-top: 10px">
+                    <label class="file-label">
+                        <input onchange="change_preview(this)" id="img-file" class="file-input" type="file"
+                               name="resume"
+                               accept="image/*">
+                        <span class="file-cta">
+                        <span class="file-icon">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label">
+                            사진 고르기
+                        </span>
+                    </span>
+                    </label>
+                </div>
+            </div>
+            <div class="addboard-content-text">
+                <div>
+                    <div class="addboard-content-text-title">
+                        <input class="input is-primary input is-large" type="text"
+                               id="img-title" placeholder="제목을 입력하세요!"
+                        >
+                    </div>
+                    <div class="addboard-content-text-tag">
+                        <input class="input is-primary input is-medium" type="text"
+                               id="img-tag" placeholder="#태그를 입력하세요!">
+                    </div>
+                    <div class="addboard-content-text-comment">
+                <textarea class="textarea is-primary"
+                          id="img-comment" placeholder="사진에 대해서 설명해주세요!"></textarea>
+                    </div>
+                </div>
+                <div class="addboard-submit-button">
+                    <button class="button is-primary" onclick="addboard()">등록하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<footer class="home-footer">
+    <a> designed by Songwonjong </a>
+    <br>
+    contact: 010-1234-5678
+  </footer>
+</html>

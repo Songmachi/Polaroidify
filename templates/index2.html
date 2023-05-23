@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Custom CSS-->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <!--JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--Bulma-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Bulma Icon -->
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <title>PolaroidIFY</title>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  <script>
+    function go_upload() {
+      const login = ! null;
+      if (login == null) {
+        alert("로그인이 필요합니다.");
+        location.href = "login.html";
+      }
+      else {
+        location.href = "upload.html";
+      }
+    }
+    $(document).ready(function () {
+
+      const imageList = [
+        {
+          image: "images/1.jpeg",
+          writer: "송원종",
+          title: "거제도바다",
+          comments: "거제도바다는 정말 아름답습니다.",
+          likes: 6,
+          date: "2023-05-13"
+
+        },
+        {
+          image: "images/2.jpeg",
+          writer: "김영희",
+          title: "예시 사진",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 3,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/3.jpeg",
+          title: "예시 사진",
+          comments: "이 사진은 예시 사진입니다.",
+          writer: "송원종",
+          likes: 1,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/4.jpeg",
+          title: "예시 사진",
+          writer: "박지현",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 4,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/5.jpeg",
+          title: "예시 사진",
+          writer: "유재헌",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 8,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/6.jpeg",
+          title: "예시 사진",
+          writer: "권순용",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 3,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/7.jpg",
+          title: "예시 사진",
+          writer: "신마괴",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 1,
+          date: "2023-05-13"
+        },
+        {
+          image: "images/8.jpeg",
+          title: "예시 사진",
+          writer: "신마괴",
+          comments: "이 사진은 예시 사진입니다.",
+          likes: 1,
+          date: "2023-05-13"
+        }
+      ]
+      imageList.forEach((image, index) => {
+        $('.slideshow-container').append(
+          `
+          <div class="slide fade" id="slide-${index}">
+            <img src="${image.image}" alt="${image.title}" id="img-${index}">
+          </div>
+          `
+        )
+      })
+      var slides = document.getElementsByClassName("slide");
+      var currentSlide = 0;
+      
+
+      function showSlide() {
+        // 모든 슬라이드를 숨김
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        // 다음 슬라이드를 보여줌
+        slides[currentSlide].style.display = "block";
+        // 다음 슬라이드 인덱스 업데이트
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0; // 첫 번째 슬라이드로 돌아감
+        }
+
+      }
+
+      var timer = setInterval(showSlide, 3000);
+
+      function stopShowSlide() {
+        const index = currentSlide === 0 ? imageList.length - 1 : currentSlide - 1
+        clearInterval(timer);
+        $(`#img-${index}`).replaceWith(
+          `
+          <div class="card" id="card-${index}">
+						<div class="card-content">
+							<p class="title" style="display: flex; justify-content: center">
+								<img src="${imageList[index].image}">
+							</p>
+							<div class="card-content-title-like">
+								<h1 class="title" style="margin: 0">
+									${imageList[index].title}
+								</h1>
+							</div>
+							<div class="card-content-comment">
+								<span class="comment">
+									<span>${imageList[index].comments}</span>
+							</div>
+							<div class="icon-text">
+								<span class="icon" style="cursor: pointer" onclick="good_board('{{board_id}}')">
+									<i class="fas fa-heart"></i>
+								</span>
+								<span>+ ${imageList[index].likes}</span>
+							</div>
+						</div>
+						<footer class="card-footer">
+							<div>${imageList[index].writer}</div>
+							<div>${imageList[index].date}</div>
+						</footer>
+					</div>
+          `
+        );
+      }
+
+
+      function restoreSlide() {
+        const index = currentSlide === 0 ? imageList.length - 1 : currentSlide - 1
+        $(`#card-${index}`).replaceWith(
+          `
+            <img src="${imageList[index].image}" alt="${imageList[index].title}" class="slide-${index}" id="img-${index}">
+          `
+        )
+        timer = setInterval(showSlide, 3000);
+      }
+
+      $(".slideshow-container").mouseenter(function () {
+        stopShowSlide();
+      }).mouseleave(function () {
+        restoreSlide();
+      })
+    })
+  </script>
+
+</head>
+
+
+
+<body>
+  <div class="home-wrapper">
+    <div class="home-main">
+      <div class="home-main-header">
+        <div class="home-main-header-title">
+          <a><img src="logo.png">
+            <span>PoloridIFY</span>
+          </a>
+        </div>
+        <div class="home-main-header-menu">
+          <a href="about.html">Why Polaroid?</a>
+          <a href="galery.html"> 둘러보기</a>
+          <a href="upload.html">업로드</a>
+          <div class="mymenu">
+            <a>마이페이지</a>
+            <div class="submenu">
+              <a href="mygallery.html">보관함</a>
+              <a href="print.html">인화하기</a>
+            </div>
+            
+          </div>
+
+          <a href="index.html">로그아웃</a>
+
+
+        </div>
+      </div>
+      <div class="home-main-card">
+        <div class="home-main-card-title">
+          추억을 공유해보세요!
+        </div>
+
+        <div class="card" style="cursor: auto">
+          <div class="card-content">
+            <p class="title" style="display: flex; justify-content: center">
+              <img src="시부야야경1.jpeg" onclick="openImage(this.src)" alt="이미징">
+            </p>
+            <!-- <div class="exif">
+              iso: 100 shutterSpeed: 1/1000 aperture: 1.8
+            </div> -->
+            <div class="card-content-title-like">
+              <h1 class="title" style="margin: 0">
+                시부야 야경
+              </h1>
+            </div>
+            <div class="card-content-comment">
+              시부야 야경이에요! 장노출을 사용해서 찍은 사진들을 합성했어요!
+            </div>
+            <div class="icon-text">
+              <span class="icon">
+                <i class="fas fa-heart"></i>
+              </span>
+              <span id='{{board_id}}'>+18</span>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <div>송원종</div>
+            <div>2023-05-14</div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-explain">
+      <div class="slideshow-container">
+        <!-- 렌더링 이후 추가! -->
+      </div>
+
+      <div class="home-explain-text" >
+        <p style="font-weight: 500; font-size: 35px; font-family: 'Roboto'; color: #2370C8;">
+          <b>ABOUT PolaroidIFY</b>
+        </p>
+        <p style="font-weight: bold; font-size: 48px; font-family: 'Roboto'; color: #262A4E; ">
+          당신만의 사진을<br>자랑해보세요!</p>
+        <p style="font-size: 16px; font-family: 'Roboto'; color: #646464; ">
+          여러 사람들과 여러분의 추억을 공유해보세요<br>
+          어느 사진이 가장 인기가 많을지 궁금하군요!<br>
+        </p>
+        <button style="margin-top: 10px;" class="button is-info" onclick="go_upload()">자랑하러가기!
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+<div class="home-footer">
+  <a> designed by Songwonjong </a>
+  <br>
+  contact: 010-1234-5678
+</div>
+
+</html>

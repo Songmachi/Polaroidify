@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>EXIF 정보 표시하기</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  <script>
+    function getExifData() {
+      var file = document.getElementById('fileInput').files[0];
+      if (file) {
+        EXIF.getData(file, function() {
+          var exifData = EXIF.getAllTags(this);
+          var shutterSpeed = exifData['ExposureTime'];
+          var aperture = exifData['FNumber'];
+          var iso = exifData['ISOSpeedRatings'];
+          var cameraMake = exifData['Make'];
+          var cameraModel = exifData['Model'];
+          var lensMake = exifData['LensMake'];
+          var lensModel = exifData['LensModel'];
+          var focalLength = exifData['FocalLength'];
+          document.getElementById('shutterSpeed').textContent = shutterSpeed;
+          document.getElementById('aperture').textContent = aperture;
+          document.getElementById('iso').textContent = iso;
+          document.getElementById('cameraMake').textContent = cameraMake;
+          document.getElementById('cameraModel').textContent = cameraModel;
+          document.getElementById('lensMake').textContent = lensMake;
+          document.getElementById('lensModel').textContent = lensModel;
+          document.getElementById('focalLength').textContent = focalLength;
+        });
+      }
+    }
+  </script>
+</head>
+<body>
+  <input type="file" id="fileInput" onchange="getExifData()"><br>
+  <div>셔터스피드: <span id="shutterSpeed"></span></div>
+  <div>조리개값: <span id="aperture"></span></div>
+  <div>ISO값: <span id="iso"></span></div>
+  <div>카메라 제조사: <span id="cameraMake"></span></div>
+  <div>카메라 모델: <span id="cameraModel"></span></div>
+  <div>렌즈 제조사: <span id="lensMake"></span></div>
+  <div>렌즈 모델: <span id="lensModel"></span></div>
+  <div>화각: <span id="focalLength"></span>mm</div>
+</body>
+</html>
