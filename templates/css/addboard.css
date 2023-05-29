@@ -60,15 +60,18 @@ body::-webkit-scrollbar {
 }
 .addboard-content-wrapper{
     display: flex;
+    background: #E55D87;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #5FC3E4, #E55D87);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #5FC3E4, #E55D87); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     align-items: center;
     justify-content: center;
     padding: 100px 0;
 }
 .addboard-content {
     padding: 60px;
-    border: 2px solid black;
+    border: 4px solid black;
     border-radius: 40px;
-    background: #fff;
+    background: #fefefe;
     display: flex;
     align-items: center;
     justify-content: center;
