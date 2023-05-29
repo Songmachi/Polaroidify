@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<!--Custom CSS-->
-	<link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="addboard.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/addboard.css">
 	<!--JQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!--Bulma-->
@@ -42,7 +42,7 @@
     <div class="home-main-header">
         <div class="home-main-header-title">
             <a href="index.html"><img src='logo.png'>
-                <span>PoloridIFY</span>
+                <span>PolaroidIFY</span>
             </a>
         </div>
         <div class="home-main-header-menu">
@@ -50,15 +50,13 @@
             <a href="galery.html"> 둘러보기</a>
             <a href="upload.html">업로드</a>
             <div class="mymenu">
-              <a>마이페이지</a>
-              <div class="submenu">
-  
-                <a href="mygallery.html">보관함</a>
+                <a>마이페이지</a>
+                <div class="submenu">
+                  <a href="mygallery.html">보관함</a>
+                  <a href="print.html">인화하기</a>
+                </div>
+                
               </div>
-              <div class="submenu">
-                <a href="print.html">인화하기</a>
-              </div>
-              </div>  
            
             <a href="index.html">로그아웃</a>
         </div>
@@ -68,7 +66,7 @@
     <div class="addboard-content-wrapper">
         <div class="addboard-content">
             <div class="addboard-content-img">
-                <img src="images/default.png" id="image">
+                <img src="images/default.jpeg" id="image">
                 <div class="file is-primary" style="justify-content: center; margin-top: 10px">
                     <label class="file-label">
                         <input onchange="change_preview(this)" id="img-file" class="file-input" type="file"
@@ -102,7 +100,7 @@
                     </div>
                 </div>
                 <div class="addboard-submit-button">
-                    <button class="button is-primary" onclick="addboard()">등록하기</button>
+                    <button class="button is-primary" onclick="alert('업로드 완료!')">등록하기</button>
                 </div>
             </div>
         </div>

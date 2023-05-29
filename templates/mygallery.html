@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<!--Custom CSS-->
-	<link rel="stylesheet" href="galery.css">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/gallery.css">
+	<link rel="stylesheet" href="css/style.css">
 	<!--JQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<!--Bulma-->
@@ -28,14 +28,14 @@
 					date: "2023-05-13"
 
 				},
-				{
-					image: "images/2.jpeg",
-					writer: "김영희",
-					tittle:"예시 사진",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 3,
-					date: "2023-05-13"
-				},
+				// {
+				// 	image: "images/2.jpeg",
+				// 	writer: "김영희",
+				// 	tittle:"예시 사진",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 3,
+				// 	date: "2023-05-13"
+				// },
 				{
 					image: "images/3.jpeg",
 					tittle:"예시 사진",
@@ -44,46 +44,46 @@
 					likes: 1,
 					date: "2023-05-13"
 				},
-				{
-					image: "images/4.jpeg",
-					tittle:"예시 사진",
-					writer: "박지현",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 4,
-					date: "2023-05-13"
-				},
-				{
-					image: "images/5.jpeg",
-					tittle:"예시 사진",
-					writer: "유재헌",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 8,
-					date: "2023-05-13"
-				},
-				{
-					image: "images/6.jpeg",
-					tittle:"예시 사진",
-					writer: "권순용",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 3,
-					date: "2023-05-13"
-				},
-				{
-					image: "images/7.jpg",
-					tittle:"예시 사진",
-					writer: "신마괴",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 1,
-					date: "2023-05-13"
-				},
-				{
-					image: "images/8.jpeg",
-					tittle:"예시 사진",
-					writer: "신마괴",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 1,
-					date: "2023-05-13"
-				}
+				// {
+				// 	image: "images/4.jpeg",
+				// 	tittle:"예시 사진",
+				// 	writer: "박지현",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 4,
+				// 	date: "2023-05-13"
+				// },
+				// {
+				// 	image: "images/5.jpeg",
+				// 	tittle:"예시 사진",
+				// 	writer: "유재헌",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 8,
+				// 	date: "2023-05-13"
+				// },
+				// {
+				// 	image: "images/6.jpeg",
+				// 	tittle:"예시 사진",
+				// 	writer: "권순용",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 3,
+				// 	date: "2023-05-13"
+				// },
+				// {
+				// 	image: "images/7.jpg",
+				// 	tittle:"예시 사진",
+				// 	writer: "신마괴",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 1,
+				// 	date: "2023-05-13"
+				// },
+				// {
+				// 	image: "images/8.jpeg",
+				// 	tittle:"예시 사진",
+				// 	writer: "신마괴",
+				// 	comments: "이 사진은 예시 사진입니다.",
+				// 	likes: 1,
+				// 	date: "2023-05-13"
+				// }
 			]
 			imageList.forEach((image) => {
 				$('.boardlist-main-card').append(
@@ -139,15 +139,14 @@
                     <a href="about.html">Why Polaroid?</a>
                     <a href="galery.html"> 둘러보기</a>
                     <a href="upload.html">업로드</a>
-                    <div class="mymenu">
-                      <a>마이페이지</a>
-                      <div class="submenu">
-                        <a href="mygallery.html">보관함</a>
-                      </div>
-                      <div class="submenu">
-                        <a href="print.html">인화하기</a>
-                      </div>
-                      </div>  
+					<div class="mymenu">
+						<a>마이페이지</a>
+						<div class="submenu">
+						  <a href="mygallery.html">보관함</a>
+						  <a href="print.html">인화하기</a>
+						</div>
+						
+					  </div> 
                     <a href="index.html">로그아웃</a>
 				</div>
 			</div>
