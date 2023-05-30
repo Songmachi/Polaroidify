@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,10 +43,10 @@
 
         },
         {
-          image: "images/2.jpeg",
-          writer: "김영희",
-          title: "예시 사진",
-          comments: "이 사진은 예시 사진입니다.",
+          image: "images/10.jpeg",
+          writer: "권순용",
+          title: "도산공원",
+          comments: "길거리에서",
           likes: 3,
           date: "2023-05-13"
         },
@@ -151,7 +150,7 @@
 									<span>${imageList[index].comments}</span>
 							</div>
 							<div class="icon-text">
-								<span class="icon" style="cursor: pointer" onclick="good_board('{{board_id}}')">
+								<span class="icon" style="cursor: pointer">
 									<i class="fas fa-heart"></i>
 								</span>
 								<span>+ ${imageList[index].likes}</span>
@@ -194,7 +193,7 @@
     <div class="home-main">
       <div class="home-main-header">
         <div class="home-main-header-title">
-          <a><img src="logo.png">
+          <a><img src="images/logo.png">
             <span>PoloridIFY</span>
           </a>
         </div>
@@ -206,12 +205,12 @@
             <a>마이페이지</a>
             <div class="submenu">
               <a href="mygallery.html">보관함</a>
-              <a href="print.html">인화하기</a>
+              <a href="index.html">로그아웃</a>
             </div>
             
           </div>
 
-          <a href="index.html">로그아웃</a>
+          
 
 
         </div>
@@ -240,7 +239,7 @@
               <span class="icon">
                 <i class="fas fa-heart"></i>
               </span>
-              <span id='{{board_id}}'>+18</span>
+              <span> +18</span>
             </div>
           </div>
           <footer class="card-footer">
@@ -266,6 +265,7 @@
           여러 사람들과 여러분의 추억을 공유해보세요<br>
           어느 사진이 가장 인기가 많을지 궁금하군요!<br>
         </p>
+        
         <button style="margin-top: 10px;" class="button is-info" onclick="go_upload()">자랑하러가기!
         </button>
       </div>
@@ -276,8 +276,9 @@
 </body>
 <div class="home-footer">
   <a> designed by Songwonjong </a>
-  <br>
-  contact: 010-1234-5678
-</div>
-
+	<br>
+	"Falling in love should be like Polaroids — instant."
+	<br>
+	<a href="https://www.instagram.com/songmach2/">Instagram</a>
+</div> 
 </html>

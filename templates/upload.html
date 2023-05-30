@@ -17,6 +17,8 @@
 
 	<title>사진 구경하기</title>
 	
+
+    
     <script>
 
         // 이미지 미리보기 이벤트
@@ -32,7 +34,10 @@
         }
 
         
-
+        function upload(){
+            alert("업로드 완료!");
+            window.location.href = "galery.html";
+        }
         
     </script>
 </head>
@@ -41,7 +46,7 @@
     <div class="home-main-wrapper">
     <div class="home-main-header">
         <div class="home-main-header-title">
-            <a href="index.html"><img src='logo.png'>
+            <a href="index.html"><img src='images/logo.png'>
                 <span>PolaroidIFY</span>
             </a>
         </div>
@@ -66,7 +71,7 @@
     <div class="addboard-content-wrapper">
         <div class="addboard-content">
             <div class="addboard-content-img">
-                <img src="images/default.jpeg" id="image">
+                <img src="images/default-image.jpg" id="image">
                 <div class="file is-primary" style="justify-content: center; margin-top: 10px">
                     <label class="file-label">
                         <input onchange="change_preview(this)" id="img-file" class="file-input" type="file"
@@ -100,7 +105,7 @@
                     </div>
                 </div>
                 <div class="addboard-submit-button">
-                    <button class="button is-primary" onclick="alert('업로드 완료!')">등록하기</button>
+                    <button class="button is-primary" onclick="upload()">등록하기</button>
                 </div>
             </div>
         </div>
@@ -111,6 +116,7 @@
 <footer class="home-footer">
     <a> designed by Songwonjong </a>
     <br>
+    <a> falling in love with Polaroid </a>
     contact: 010-1234-5678
   </footer>
 </html>

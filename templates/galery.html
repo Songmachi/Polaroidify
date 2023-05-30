@@ -20,70 +20,86 @@
 		$('document').ready(function () {
 			const imageList = [
 				{
-					image: "images/1.jpeg",
+					image: "images/12.jpg",
 					writer: "송원종",
-					tittle: "거제도바다",
-					comments: "거제도바다는 정말 아름답습니다.",
+					tittle: "개잘잠",
+					comments: "자기가 진짜 사람인줄 알아!",
 					likes: 6,
 					date: "2023-05-13"
 
+				},{
+					image: "images/wind.jpeg",
+					writer: "송원종",
+					tittle: "태풍",
+					comments: "바람이 심하게 부는 날이에요!",
+					likes: 3090,
+					date: "2023-05-25"
+
 				},
 				{
-					image: "images/2.jpeg",
-					writer: "김영희",
-					tittle:"예시 사진",
-					comments: "이 사진은 예시 사진입니다.",
-					likes: 3,
+					image: "images/10.jpeg",
+					writer: "권순용",
+					tittle:"웃참",
+					comments: "뭘 봤길래..",
+					likes: 6492,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/3.jpeg",
-					tittle:"예시 사진",
-					comments: "이 사진은 예시 사진입니다.",
+					tittle:"야자수 그림자",
+					comments: "바닷가에서 찍은 사진이에요.",
 					writer: "송원종",
 					likes: 1,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/4.jpeg",
-					tittle:"예시 사진",
+					tittle:"다낭",
 					writer: "박지현",
-					comments: "이 사진은 예시 사진입니다.",
+					comments: "베트남 진짜 더워요...",
 					likes: 4,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/5.jpeg",
-					tittle:"예시 사진",
+					tittle:"길거리",
 					writer: "유재헌",
-					comments: "이 사진은 예시 사진입니다.",
+					comments: "햇빛이 예뻐서 담아봤어요!",
 					likes: 8,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/6.jpeg",
-					tittle:"예시 사진",
+					tittle:"호이안",
 					writer: "권순용",
-					comments: "이 사진은 예시 사진입니다.",
+					comments: "호이안 고대수도에 가 봤어요.",
 					likes: 3,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/7.jpg",
-					tittle:"예시 사진",
-					writer: "신마괴",
-					comments: "이 사진은 예시 사진입니다.",
+					tittle:"시부야 전망",
+					writer: "이동범",
+					comments: "시부야 스퀘어 옥상에서 찍은 사진이에요~",
 					likes: 1,
 					date: "2023-05-13"
 				},
 				{
 					image: "images/8.jpeg",
-					tittle:"예시 사진",
-					writer: "신마괴",
-					comments: "이 사진은 예시 사진입니다.",
+					tittle:"순간 포착",
+					writer: "송원종",
+					comments: "그라운드 시소 성수에서 찍었어요.",
 					likes: 1,
 					date: "2023-05-13"
-				}
+				},
+				{
+					image: "images/11.jpeg",
+					tittle:"낮술",
+					writer: "유준호",
+					comments: "왜 이러는 걸까요..",
+					likes: 4,
+					date: "2023-05-13"
+				},
 			]
 			imageList.forEach((image) => {
 				$('.boardlist-main-card').append(
@@ -103,7 +119,7 @@
 									<span>${image.comments}</span>
 							</div>
 							<div class="icon-text">
-								<span class="icon" style="cursor: pointer" onclick="good_board('{{board_id}}')">
+								<span class="icon" style="cursor: pointer">
 									<i class="fas fa-heart"></i>
 								</span>
 								
@@ -144,17 +160,15 @@
 							<a>마이페이지</a>
 							<div class="submenu">
 								<a href="mygallery.html">보관함</a>
-								<a href="print.html">인화하기</a>
+								<a href="index.html">로그아웃</a>
 							</div>
 						</div>
 				   
 					
 				</div>
-				<a href="index.html">로그아웃</a>
+				
 			</div>
-			<div class="boardlist-main-header-search">
-                <input type="text" placeholder="#태그를입력하세요">
-                <button>검색</button>
+			
 
 
 			<div class="boardlist-main-card">

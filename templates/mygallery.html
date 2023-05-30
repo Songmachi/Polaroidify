@@ -13,10 +13,23 @@
 	<!-- Bulma Icon -->
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
-
+	<script>
+		function delOk(){
+			if(!confirm('삭제하시면 복구할수 없습니다. \n 정말로 삭제하시겠습니까??')){
+				alert('취소되었습니다.');
+				return false;
+			}
+			else{
+				alert('삭제되었습니다.');
+			}
+		}
+		</script>
 
 	<title>사진 구경하기</title>
+
+	
 	<script>
+
 		$('document').ready(function () {
 			const imageList = [
 				{
@@ -38,7 +51,7 @@
 				// },
 				{
 					image: "images/3.jpeg",
-					tittle:"예시 사진",
+					tittle: "예시 사진",
 					comments: "이 사진은 예시 사진입니다.",
 					writer: "송원종",
 					likes: 1,
@@ -114,6 +127,8 @@
 					<footer class="card-footer">
 						<div>${image.writer}</div>
 						<div>${image.date}</div>
+						<button onclick="location.href='payment.html'">인화하기</button>
+						<button value="삭제" onclick="delOk()">삭제하기</button>
 					</footer>
 				</div>
 
@@ -123,6 +138,7 @@
 
 		})
 	</script>
+
 </head>
 
 <body>
@@ -130,34 +146,34 @@
 		<div class="boardlist-main">
 			<div class="boardlist-main-header">
 				<div class="boardlist-main-header-title">
-					<a href="index.html">
-						<img src="logo.png">
-							<span>PolaroidIFY</span>
-						  </a>
+					<a href="index2.html">
+						<img src="images/logo.png">
+						<span>PolaroidIFY</span>
+					</a>
 				</div>
 				<div class="boardlist-main-header-menu">
-                    <a href="about.html">Why Polaroid?</a>
-                    <a href="galery.html"> 둘러보기</a>
-                    <a href="upload.html">업로드</a>
+					<a href="about.html">Why Polaroid?</a>
+					<a href="galery.html"> 둘러보기</a>
+					<a href="upload.html">업로드</a>
 					<div class="mymenu">
 						<a>마이페이지</a>
 						<div class="submenu">
-						  <a href="mygallery.html">보관함</a>
-						  <a href="print.html">인화하기</a>
+							<a href="mygallery.html">보관함</a>
+							<a href="index.html">로그아웃</a>
 						</div>
-						
-					  </div> 
-                    <a href="index.html">로그아웃</a>
+
+					</div>
+
 				</div>
 			</div>
-           
+
 			<div class="boardlist-main-card">
 				<!-- 이미지 리스트 -->
 			</div>
 		</div>
 	</div>
-	
-	  
+
+
 </body>
 <footer class="home-footer">
 	<a> designed by Songwonjong </a>
@@ -165,5 +181,6 @@
 	"Falling in love should be like Polaroids — instant."
 	<br>
 	<a href="https://www.instagram.com/songmach2/">Instagram</a>
-  </footer>
+</footer>
+
 </html>
